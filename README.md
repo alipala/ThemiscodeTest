@@ -56,3 +56,4 @@
 * Records all of project's dependencies
 * https://qaboy.com/2018/01/08/setup-test-reports-selenium-using-python-allure/
 * https://www.lambdatest.com/blog/test-automation-using-pytest-and-selenium-webdriver/
+* https://docs.qameta.io/allure/#_pytest
