@@ -1,5 +1,5 @@
-#Pages
-=====
+# Pages
+
 1. Login
 2. Reset Password
 3. Home
@@ -8,49 +8,49 @@
 6. Wallet
 7. Calendar
 
-#Part 1:
+# Part 1:
 
-##Methods
-=======
-1. Behave
-2. KDD
+## Methods
 
-##Unit Test Framework
-===================
-1. unittest
-2. Pytest
+* Behave
+* KDD
 
-##Static Code Analysis
-====================
-1. flake8
+## Unit Test Framework
+
+* unittest
+* Pytest
+
+## Static Code Analysis
+
+* flake8
 
 #Part 2:
 
-##Design Patterns
-===============
-1. Page Object Model
-2. Factory Design
+## Design Patterns
 
-#Part 3:
+* Page Object Model
+* Factory Design
 
-##Report
-======
-1. ExtentReport
-2. Allure
+# Part 3:
 
-##Version Control
-===============
-1. GIT
-2. GitHub
+## Report
 
-##CI/CD
-=====
-1. Jenkins
+* ExtentReport
+* Allure
 
-##Testcase Management
-===================
-1. Test Rail
+## Version Control
 
-##Requirements.txt
-================
-Records all of project's dependencies
+* GIT
+* GitHub
+
+## CI/CD
+
+* Jenkins
+
+## Testcase Management
+
+* Test Rail
+
+## Requirements.txt
+
+* Records all of project's dependencies
