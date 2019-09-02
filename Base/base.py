@@ -7,7 +7,7 @@ class Base:
     @pytest.fixture(autouse=True)
     def set_up(self):
         print("Initiating Chrome driver")
-        self.driver = webdriver.Chrome(executable_path="C:/_D/python-misc/themiscode/ThemiscodeTest/Drivers/chromedriver.exe")
+        self.driver = webdriver.Chrome(executable_path="D:/_python/themis/Drivers/chromedriver.exe")
         print("-----------------------------------------")
         print("Test started")
         self.driver.implicitly_wait(10)
@@ -20,3 +20,6 @@ class Base:
             print("Tests finished")
             self.driver.close()
             self.driver.quit()
+
+
+

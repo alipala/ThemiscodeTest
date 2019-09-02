@@ -1,10 +1,13 @@
+import sys, os
+myPath = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, myPath + '/../')
 from Pages.LoginPage import LoginPage
 from Base.base import Base
 import pytest
-import sys
-import os
 import pandas as pd
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
+import allure
+
+
 
 @pytest.mark.usefixtures('set_up')
 class TestLogin(Base):
@@ -12,7 +15,7 @@ class TestLogin(Base):
     __user_data_file = r"\login_details.xlsx"
     df = pd.read_excel(os.getcwd() + __user_data_file)
 
-    def test_login_validation(self):
+    def test_login_success(self):
         driver = self.driver
         login = LoginPage(driver)
         login.enter_email(self.df.loc[0,"username"])
@@ -24,7 +27,7 @@ class TestLogin(Base):
         except Exception as e:
             print("Title is wrong", format(e))
 
-    def test_login_wrong(self):
+    def test_login_fail(self):
         driver = self.driver
         login = LoginPage(driver)
         login.enter_email(self.df.loc[1,"username"])
@@ -35,5 +38,4 @@ class TestLogin(Base):
             print("Title is ok")
         except Exception as e:
             print("Title is wrong", format(e))
-
 
