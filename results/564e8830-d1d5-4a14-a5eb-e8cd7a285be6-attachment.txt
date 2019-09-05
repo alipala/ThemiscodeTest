@@ -1,7 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-Title is wrong assert 'Ana Sayfa - Dava & İcra Takip' in 'Giriş - Dava & İcra Takip'
- +  where 'Giriş - Dava & İcra Takip' = <selenium.webdriver.chrome.webdriver.WebDriver (session="77967bb3e336fb7b56b6d62bdf634286")>.title
------------------------------------------
-Tests finished

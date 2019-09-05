@@ -13,6 +13,9 @@ class TestHome(Base):
     __user_data_file = r"\login_details.xlsx"
     df = pd.read_excel(os.getcwd() + __user_data_file)
 
+    # @allure.feature("Home page logout")
+    # @allure.story("The user should logout from system with logout button")
+    # @allure.severity(allure.severity_level.CRITICAL)
     def test_home_logout(self):
         driver = self.driver
         self.login()
