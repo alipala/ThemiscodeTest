@@ -34,8 +34,11 @@ class LawsuitPage:
               'Her iki taraf dinlendikten sonra avukat ' \
               'hatırlamak için bu kısımları doldurabilir.'
 
+    __before_case_count = 0
+
     def __init__(self, driver):
         self.driver = driver
+        self.case_table_xpath = Locators.case_table_xpath
         self.table_last_row_xpath = Locators.table_last_row_xpath
         self.case_create_btn_id = Locators.case_create_btn_id
         self.case_type_dropbox_id = Locators.case_type_dropbox_id
@@ -85,8 +88,13 @@ class LawsuitPage:
         self.discard_btn_css = Locators.discard_btn_css
 
         self.case_edit_information_btn_xpath = Locators.case_edit_information_btn_xpath
+        self.case_information_update_btn_id = Locators.case_information_update_btn_id
+
+        self.success_saved_alert_message_css = Locators.success_saved_alert_message_css
 
     def click_case_create_btn(self):
+        global __before_case_count
+        __before_case_count = len(self.driver.find_elements_by_xpath(self.case_table_xpath))
         self.driver.find_element_by_id(self.case_create_btn_id).click()
 
     def fill_case_information(self):
@@ -144,7 +152,6 @@ class LawsuitPage:
         is_selected = self.driver.find_element_by_css_selector(self.client_type_person_radio_css).get_attribute("checked")
         try:
             assert is_selected is not None
-            print("Element checked - ", is_selected)
         except Exception:
             raise
             print("Element checked - false")
@@ -154,7 +161,6 @@ class LawsuitPage:
         is_selected = self.driver.find_element_by_css_selector(self.client_is_adult_radio_css).get_attribute("checked")
         try:
             assert is_selected is not None
-            print("Element checked - ", is_selected)
         except Exception:
             raise
             print("Element checked - false")
@@ -164,7 +170,6 @@ class LawsuitPage:
         is_selected = self.driver.find_element_by_css_selector(self.client_case_davaci_radio_css).get_attribute("checked")
         try:
             assert is_selected is not None
-            print("Element checked - ", is_selected)
         except Exception:
             raise
             print("Element checked - false")
@@ -185,7 +190,6 @@ class LawsuitPage:
         is_selected = self.driver.find_element_by_css_selector(self.defendant_type_person_radio_css).get_attribute("checked")
         try:
             assert is_selected is not None
-            print("Element checked - ", is_selected)
         except Exception:
             raise
             print("Element checked - false")
@@ -195,7 +199,6 @@ class LawsuitPage:
         is_selected = self.driver.find_element_by_css_selector(self.defendant_is_adult_radio_css).get_attribute("checked")
         try:
             assert is_selected is not None
-            print("Element checked - ", is_selected)
         except Exception:
             raise
             print("Element checked - false")
@@ -205,7 +208,6 @@ class LawsuitPage:
         is_selected = self.driver.find_element_by_css_selector(self.defendant_case_davaci_radio_css).get_attribute("checked")
         try:
             assert is_selected is not None
-            print("Element checked - ", is_selected)
         except Exception:
             raise
             print("Element checked - false")
@@ -234,15 +236,34 @@ class LawsuitPage:
 
     def save_case(self):
         self.driver.find_element_by_name(self.submit_btn_name).click()
+        assert self.driver.find_element_by_css_selector(self.success_saved_alert_message_css).text == "Dava kaydı başarıyla oluşturuldu."
 
     def discard_case(self):
+        global __before_case_count
         self.driver.find_element_by_css_selector(self.discard_btn_css).click()
-
-    def select_table_last_entry(self):
-        self.driver.find_element_by_xpath(self.table_last_row_xpath).click()
+        after_case_count = len(self.driver.find_elements_by_xpath(self.case_table_xpath))
+        assert __before_case_count == after_case_count
 
     def case_entry_information_edit(self):
-        pass
+        # Select table last entry
+        self.driver.find_element_by_xpath(self.table_last_row_xpath).click()
+        # Update button icon first click
+        self.driver.find_element_by_xpath(self.case_edit_information_btn_xpath).click()
+        self.driver.find_element_by_id(self.case_subject_txtbox_id).send_keys(" updated")
+        # Güncelle button click
+        self.driver.find_element_by_id(self.case_information_update_btn_id).click()
+
+        self.driver.refresh()
+
+        # Update button icon second click
+        self.driver.find_element_by_xpath(self.case_edit_information_btn_xpath).click()
+
+        txt_temp = self.driver.find_element_by_id(self.case_subject_txtbox_id)
+
+        assert txt_temp.get_attribute('value') == "Law and Person interaction updated"
+
+
+
 
 
 

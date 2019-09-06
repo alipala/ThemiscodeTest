@@ -1,0 +1,16 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+553
+Element checked -  true
+Element checked -  true
+Element checked -  true
+Element checked -  true
+Element checked -  true
+Element checked -  true
+553
+553
+553
+0
+-----------------------------------------
+Tests finished

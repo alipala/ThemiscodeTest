@@ -1,0 +1,6 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+Case count is: 552
+-----------------------------------------
+Tests finished

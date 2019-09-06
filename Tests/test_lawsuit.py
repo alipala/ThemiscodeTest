@@ -33,23 +33,21 @@ class TestLawsuit(Base):
     #     self.login()
     #     self.case_create()
     #     lawsuit.save_case()
-    #
-    # def test_case_create_discard(self):
-    #     driver = self.driver
-    #     lawsuit = LawsuitPage(driver)
-    #     self.login()
-    #     self.case_create()
-    #     lawsuit.discard_case()
 
-    def test_edit_last_case(self):
+    def test_case_create_discard(self):
         driver = self.driver
-        self.login()
         lawsuit = LawsuitPage(driver)
-        home = HomePage(driver)
-        home.click_law_suit_page()
-        lawsuit.select_table_last_entry()
-        lawsuit.case_entry_information_edit()
+        self.login()
+        self.case_create()
+        lawsuit.discard_case()
 
+    # def test_edit_last_case(self):
+    #     driver = self.driver
+    #     self.login()
+    #     lawsuit = LawsuitPage(driver)
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     lawsuit.case_entry_information_edit()
 
     # Helper functions
     def login(self):

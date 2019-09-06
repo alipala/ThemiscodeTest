@@ -4,39 +4,8 @@
     <list default="true" id="b9944160-2d06-4caa-a654-85002a4e340c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Locators/locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Locators/locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/HomePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/HomePage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/LawsuitPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/LawsuitPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestSuite/test_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestSuite/test_suite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/test_lawsuit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_lawsuit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/15af4442-47e8-424f-986b-df29c18d986f-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/19c441ac-3585-430c-81df-ba646103c14a-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1f7ea07a-85df-4eec-b4a7-47fe67478a56-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/4e04b47f-7fa3-4716-b972-ba504c3be396-attachment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/564e8830-d1d5-4a14-a5eb-e8cd7a285be6-attachment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/75e7f014-c80c-44a9-9303-d708e5697753-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/77090c8d-188e-4328-99bc-c881754a5880-attachment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/8b6aec60-a512-4ad2-b363-b2c2d5fdca24-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/b93ab0a3-6a51-4eee-ad84-a9cef33c99c3-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/DESCRIPTION.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest-2.8.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest/listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest/listener.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest/plugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/allure_pytest/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_python_commons-2.8.0.dist-info/DESCRIPTION.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_python_commons-2.8.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_python_commons-2.8.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_python_commons-2.8.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_python_commons-2.8.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_python_commons-2.8.0.dist-info/metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/allure_python_commons-2.8.0.dist-info/top_level.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,13 +14,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" exportFormat="Xml" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="locators.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Locators/locators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="77" column="35" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="35" />
+            <state relative-caret-position="176">
+              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -59,18 +29,29 @@
       <file leaf-file-name="LawsuitPage.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages/LawsuitPage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="245" lean-forward="true" selection-start-line="245" selection-end-line="245" />
+            <state relative-caret-position="880">
+              <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#289#352#0" />
+                <element signature="e#1223#4842#0" />
+                <element signature="e#4854#5045#0" />
                 <element signature="e#2372#4710#0" />
                 <element signature="e#5516#7302#0" />
                 <element signature="e#7390#9168#0" />
                 <element signature="e#10699#11178#0" />
-                <element signature="e#11213#11275#0" />
-                <element signature="e#11327#11397#0" />
+                <element signature="e#11477#11724#0" />
+                <element signature="e#11965#12298#0" />
+                <element signature="e#11620#12353#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginPage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pages/LoginPage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -78,8 +59,8 @@
       <file leaf-file-name="test_lawsuit.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/test_lawsuit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+            <state relative-caret-position="710">
+              <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -103,9 +84,17 @@
       <find>#dvblgrc_936186871 &gt; td:nth-child(6) &gt; a:nth-child(1)</find>
       <find>case_edit_information_btn_css</find>
       <find>case_edit_information_btn_partial_link</find>
-      <find>case_edit_in</find>
       <find>user_partial_link_text</find>
+      <find>case_edit_in</find>
+      <find>case_edit_information_btn_xpath</find>
       <find>tbody</find>
+      <find>dv_blg_konu</find>
+      <find>case_subject_txtbox_id</find>
+      <find>save_case</find>
+      <find>click_law_suit_page</find>
+      <find>discard_case</find>
+      <find>kaydet</find>
+      <find>Element checked</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,28 +115,28 @@
         <option value="$PROJECT_DIR$/Tests/test_wallet.py" />
         <option value="$PROJECT_DIR$/Tests/test_calendar.py" />
         <option value="$PROJECT_DIR$/TestSuite/suite.py" />
-        <option value="$PROJECT_DIR$/Pages/LoginPage.py" />
         <option value="$PROJECT_DIR$/Helper/helper.py" />
         <option value="$PROJECT_DIR$/Base/base.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/TestSuite/test_suite.py" />
         <option value="$PROJECT_DIR$/Tests/test_home.py" />
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/pyparsing.py" />
-        <option value="$PROJECT_DIR$/Pages/HomePage.py" />
         <option value="$PROJECT_DIR$/Tests/test_home_welcome.py" />
         <option value="$PROJECT_DIR$/Tests/test_login.py" />
         <option value="$PROJECT_DIR$/Tests/test_add_case.py" />
-        <option value="$PROJECT_DIR$/Tests/test_lawsuit.py" />
+        <option value="$PROJECT_DIR$/Pages/HomePage.py" />
         <option value="$PROJECT_DIR$/Locators/locators.py" />
+        <option value="$PROJECT_DIR$/Tests/test_lawsuit.py" />
+        <option value="$PROJECT_DIR$/Pages/LoginPage.py" />
         <option value="$PROJECT_DIR$/Pages/LawsuitPage.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="793" />
-    <option name="y" value="40" />
-    <option name="width" value="814" />
-    <option name="height" value="867" />
+    <option name="x" value="991" />
+    <option name="y" value="50" />
+    <option name="width" value="1018" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -344,9 +333,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_for_Tests_test_login_TestLogin_test_login_success - 2019.09.04 at 12h 28m 29s.xml">
-      <configuration name="py.test for Tests.test_login.TestLogin.test_login_success" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_for_Tests_test_login_TestLogin_test_login_success - 2019.09.04 at 12h 30m 15s.xml">
       <configuration name="py.test for Tests.test_login.TestLogin.test_login_success" configurationId="tests" />
     </history-entry>
@@ -374,16 +360,19 @@
     <history-entry file="py_test_for_test_lawsuit_TestLawsuit - 2019.09.05 at 09h 04m 30s.xml">
       <configuration name="py.test for test_lawsuit.TestLawsuit" configurationId="tests" />
     </history-entry>
+    <history-entry file="py_test_for_test_home_welcome_TestHomeWelcome_test_home_welcome_link - 2019.09.06 at 17h 09m 02s.xml">
+      <configuration name="py.test for test_home_welcome.TestHomeWelcome.test_home_welcome_link" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.123958334" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15494792" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005208" side_tool="true" weight="0.3453159" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" visible="true" weight="0.3409586" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" visible="true" weight="0.23361823" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -407,13 +396,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Locators/locators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pages/LoginPage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -675,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/test_home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" selection-start-line="23" selection-end-line="27" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/test_add_case.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -695,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pages/LoginPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="76" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/test_login.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-220">
@@ -709,40 +677,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Locators/locators.py">
+    <entry file="file://$PROJECT_DIR$/Tests/test_home.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="77" column="35" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="35" />
+        <state relative-caret-position="67">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages/HomePage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="220">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Locators/locators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test Results - py_test_for_test_lawsuit_TestLawsuit.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages/LoginPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/test_lawsuit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+        <state relative-caret-position="710">
+          <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages/LawsuitPage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="245" lean-forward="true" selection-start-line="245" selection-end-line="245" />
+        <state relative-caret-position="880">
+          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#289#352#0" />
+            <element signature="e#1223#4842#0" />
+            <element signature="e#4854#5045#0" />
             <element signature="e#2372#4710#0" />
             <element signature="e#5516#7302#0" />
             <element signature="e#7390#9168#0" />
             <element signature="e#10699#11178#0" />
-            <element signature="e#11213#11275#0" />
-            <element signature="e#11327#11397#0" />
+            <element signature="e#11477#11724#0" />
+            <element signature="e#11965#12298#0" />
+            <element signature="e#11620#12353#0" />
           </folding>
         </state>
       </provider>

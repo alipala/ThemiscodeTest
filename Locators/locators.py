@@ -11,8 +11,8 @@ class Locators:
     user_partial_link_text = "Hoşgeldiniz Sayın"
     lawsuit_link_xpath = "//a[@href='http://themiscode.com/panel/Lawsuit/index']"
 
-
     # LawsuitPage elements
+    case_table_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/table/tbody/tr'
     case_create_btn_id = "dosya-ekle-btn"
     case_type_dropbox_id = "dv_blg_turu"
     case_type_detail_dropbox_id = "dv_blg_turu_detay"
@@ -49,7 +49,6 @@ class Locators:
     client_address_txtarea_id = "muvekkil_adres"
     client_add_btn_id = "muvekkil-ekle"
 
-
     # Defendant information elements
     defendant_type_person_radio_css = "#detaylar > div > div:nth-child(4) > div > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > label > input"
     defendant_type_company_radio_css = "#detaylar > div > div:nth-child(4) > div > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div > label > input"
@@ -76,6 +75,13 @@ class Locators:
     # Edit button
     table_last_row_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/table/tbody/tr[1]/td[6]/a[2]'
     case_edit_information_btn_xpath = '//*[@id="dava-bilgileri"]/div/table/tbody/tr[1]/td[6]/a[1]'
+    case_information_update_btn_id = "dava-bilgi-guncelle"
+
+    # Alerts
+    # Successfully saved alert message
+    success_saved_alert_message_css = "div.alert.alert-success"
+
+
 
 
 
