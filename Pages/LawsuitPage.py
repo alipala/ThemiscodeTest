@@ -1,6 +1,7 @@
 from Locators.locators import Locators
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
+import json
 
 
 class LawsuitPage:
@@ -34,10 +35,22 @@ class LawsuitPage:
               'Her iki taraf dinlendikten sonra avukat ' \
               'hatırlamak için bu kısımları doldurabilir.'
 
+
     __before_case_count = 0
 
     def __init__(self, driver):
         self.driver = driver
+
+        self.filter_file_no_txtbox_id = Locators.filter_file_no_txtbox_id
+        self.filter_search_btn_id = Locators.filter_search_btn_id
+        self.filtered_search_result_sheet_no_xpath = Locators.filtered_search_result_sheet_no_xpath
+        self.clear_filter_btn_xpath = Locators.clear_filter_btn_xpath
+        self.filtered_table_first_row_xpath = Locators.filtered_table_first_row_xpath
+        self.back_error_message_css = Locators.back_error_message_css
+        self.filtered_table_first_row_pre_xpath = Locators.filtered_table_first_row_pre_xpath
+        self.filter_case_state_dropbox_id = Locators.filter_case_state_dropbox_id
+        self.filter_case_type_dropbox_name = Locators.filter_case_type_dropbox_name
+
         self.case_table_xpath = Locators.case_table_xpath
         self.table_last_row_xpath = Locators.table_last_row_xpath
         self.case_create_btn_id = Locators.case_create_btn_id
@@ -261,6 +274,64 @@ class LawsuitPage:
         txt_temp = self.driver.find_element_by_id(self.case_subject_txtbox_id)
 
         assert txt_temp.get_attribute('value') == "Law and Person interaction updated"
+
+    def filter_case_by_file_no(self):
+        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).clear()
+        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).send_keys(self.SHEET_NO)
+        self.driver.find_element_by_id(self.filter_search_btn_id).click()
+
+        # filtered search value of "föy no"
+        sheet_no = self.driver.find_element_by_xpath(self.filtered_search_result_sheet_no_xpath)
+        assert sheet_no.text == '9000'
+
+    def clear_filtered_search(self):
+        self.driver.find_element_by_xpath(self.clear_filter_btn_xpath).click()
+        txt_temp = self.driver.find_element_by_id(self.filter_file_no_txtbox_id)
+        assert txt_temp.get_attribute('value') == ""
+
+    def back_previous_page(self):
+        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).clear()
+        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).send_keys(self.SHEET_NO)
+        self.driver.find_element_by_id(self.filter_search_btn_id).click()
+        self.driver.find_element_by_xpath(self.filtered_table_first_row_xpath).click()
+
+        # This is the best way to go to back
+        self.driver.execute_script("window.history.go(-1)")
+        h1_error_message = self.driver.find_element_by_css_selector(self.back_error_message_css)
+        assert h1_error_message.text != "Confirm Form Resubmission"
+
+    def filter_case_by_case_state(self):
+        # Select "İnfaz" value in dropbox
+        select = Select(self.driver.find_element_by_id(self.filter_case_state_dropbox_id))
+        select.select_by_value('İnfaz')
+
+        # Click "Ara" button
+        self.driver.find_element_by_id(self.filter_search_btn_id).click()
+        temp_txt = self.driver.find_element_by_xpath(self.filtered_table_first_row_pre_xpath)
+        txt_content = temp_txt.get_attribute('textContent')
+        print(txt_content)
+        assert "blg_i_dava_durumu' => 'İnfaz'" in txt_content
+
+    def filter_case_by_case_type(self):
+        select = Select(self.driver.find_element_by_name(self.filter_case_type_dropbox_name))
+        select.select_by_value('Hukuk')
+        self.driver.find_element_by_id(self.filter_search_btn_id).click()
+        temp_txt = self.driver.find_element_by_xpath(self.filtered_table_first_row_pre_xpath)
+        txt_content = temp_txt.get_attribute('textContent')
+        print(txt_content)
+        assert "'blg_i_dava_turu' => 'Hukuk'" in txt_content
+
+    # This test will be implemented after development works well enough
+    def filter_case_by_client(self):
+        pass
+
+    # This test will be implemented after development works well enough
+    def filter_case_by_defendant(self):
+        pass
+
+
+
+
 
 
 

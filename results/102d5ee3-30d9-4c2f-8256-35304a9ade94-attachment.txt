@@ -1,0 +1,6 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+"array (\n  0 => \n  stdClass::__set_state(array(\n     'blg_i_dava_turu' => 'Ceza',\n     'blg_i_dava_turu_detay' => 'Asliye Ceza',\n     'blg_i_dava_konu' => 'TAKS\u0130RL\u0130 YARALAMA',\n     'blg_i_dava_il' => '\u0130zmir',\n     'blg_i_dava_ilce' => '',\n     'blg_i_dava_acilis_tarihi' => '2013-05-25',\n     'blg_i_dava_mahkeme_no' => '27',\n     'blg_i_dava_mahkeme_adi' => '',\n     'blg_i_dava_durumu' => '\u0130nfaz',\n     'blg_i_foy_no' => '825',\n     'blg_i_dava_degeri' => '',\n     'blg_i_dava_degeri_kur' => 'TL',\n     'blg_i_dava_esas_yil' => '2014/148',\n     'blg_i_dava_esas_no' => '',\n     'blg_i_dava_karar_yil' => '',\n     'blg_i_dava_karar_no' => '',\n     'blg_i_dava_karar_tarih_tarih' => '',\n     'blg_i_dava_karar_tarih_no' => '',\n     'blg_i_dava_kesinlesme_tarihi' => '',\n     'blg_i_dava_karar_tarih_tarih_lbl' => 'Karar Tarihi/No:',\n     'blg_i_dava_karar_yil_lbl' => 'Karar Y\u0131l/No:',\n     'blg_i_dava_esas_yil_lbl' => 'Esas Y\u0131l/No:',\n  )),\n)"
+-----------------------------------------
+Tests finished

@@ -1,0 +1,32 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+array (
+  0 => 
+  stdClass::__set_state(array(
+     'blg_i_dava_turu' => 'Ceza',
+     'blg_i_dava_turu_detay' => 'Asliye Ceza',
+     'blg_i_dava_konu' => 'TAKSİRLİ YARALAMA',
+     'blg_i_dava_il' => 'İzmir',
+     'blg_i_dava_ilce' => '',
+     'blg_i_dava_acilis_tarihi' => '2013-05-25',
+     'blg_i_dava_mahkeme_no' => '27',
+     'blg_i_dava_mahkeme_adi' => '',
+     'blg_i_dava_durumu' => 'İnfaz',
+     'blg_i_foy_no' => '825',
+     'blg_i_dava_degeri' => '',
+     'blg_i_dava_degeri_kur' => 'TL',
+     'blg_i_dava_esas_yil' => '2014/148',
+     'blg_i_dava_esas_no' => '',
+     'blg_i_dava_karar_yil' => '',
+     'blg_i_dava_karar_no' => '',
+     'blg_i_dava_karar_tarih_tarih' => '',
+     'blg_i_dava_karar_tarih_no' => '',
+     'blg_i_dava_kesinlesme_tarihi' => '',
+     'blg_i_dava_karar_tarih_tarih_lbl' => 'Karar Tarihi/No:',
+     'blg_i_dava_karar_yil_lbl' => 'Karar Yıl/No:',
+     'blg_i_dava_esas_yil_lbl' => 'Esas Yıl/No:',
+  )),
+)
+-----------------------------------------
+Tests finished

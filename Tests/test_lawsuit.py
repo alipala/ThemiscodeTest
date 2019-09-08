@@ -34,12 +34,12 @@ class TestLawsuit(Base):
     #     self.case_create()
     #     lawsuit.save_case()
 
-    def test_case_create_discard(self):
-        driver = self.driver
-        lawsuit = LawsuitPage(driver)
-        self.login()
-        self.case_create()
-        lawsuit.discard_case()
+    # def test_case_create_discard(self):
+    #     driver = self.driver
+    #     lawsuit = LawsuitPage(driver)
+    #     self.login()
+    #     self.case_create()
+    #     lawsuit.discard_case()
 
     # def test_edit_last_case(self):
     #     driver = self.driver
@@ -48,6 +48,49 @@ class TestLawsuit(Base):
     #     home = HomePage(driver)
     #     home.click_law_suit_page()
     #     lawsuit.case_entry_information_edit()
+
+    # def test_find_case_file_by_no(self):
+    #     driver = self.driver
+    #     self.login()
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     lawsuit = LawsuitPage(driver)
+    #     lawsuit.filter_case_by_file_no()
+
+    # def test_find_case_file_by_case_state(self):
+    #     driver = self.driver
+    #     self.login()
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     lawsuit = LawsuitPage(driver)
+    #     lawsuit.filter_case_by_case_state()
+
+    def test_find_case_file_by_case_type(self):
+        driver = self.driver
+        self.login()
+        home = HomePage(driver)
+        home.click_law_suit_page()
+        lawsuit = LawsuitPage(driver)
+        lawsuit.filter_case_by_case_type()
+
+
+    # def test_clear_sheet_no_filter(self):
+    #     driver = self.driver
+    #     self.login()
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     lawsuit = LawsuitPage(driver)
+    #     lawsuit.filter_case_by_file_no()
+    #     lawsuit.clear_filtered_search()
+
+    # def test_back_previous_page(self):
+    #     driver = self.driver
+    #     self.login()
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     lawsuit = LawsuitPage(driver)
+    #     lawsuit.filter_case_by_file_no()
+    #     lawsuit.back_previous_page()
 
     # Helper functions
     def login(self):

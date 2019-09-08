@@ -12,6 +12,24 @@ class Locators:
     lawsuit_link_xpath = "//a[@href='http://themiscode.com/panel/Lawsuit/index']"
 
     # LawsuitPage elements
+
+    # Find case files elements
+    filter_case_state_dropbox_id = "inputState"
+    filter_case_client_txtbox_name = "muvekkil"
+    filter_file_no_txtbox_id = "foy-no"
+    filter_defendant_txtbox_name = "karsi_taraf"
+    filter_case_type_dropbox_name = "dava_turu"
+    filter_search_btn_id = "ara-btn"
+    filtered_search_result_sheet_no_xpath = "//a[contains(text(),'9000')]"
+    clear_filter_btn_xpath = "//button[contains(@class,'temizle mr-2')]"
+    filtered_table_first_row_xpath = "//table[@class='table table-striped']//tbody//tr//th[1]"
+    back_error_message_css = "#main-message > h1"
+    filtered_table_first_row_pre_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/pre[1]'
+
+
+
+
+    # Case files elements
     case_table_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/table/tbody/tr'
     case_create_btn_id = "dosya-ekle-btn"
     case_type_dropbox_id = "dv_blg_turu"
@@ -80,6 +98,8 @@ class Locators:
     # Alerts
     # Successfully saved alert message
     success_saved_alert_message_css = "div.alert.alert-success"
+
+
 
 
 
