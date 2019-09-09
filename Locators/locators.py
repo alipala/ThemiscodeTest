@@ -99,6 +99,12 @@ class Locators:
     # Successfully saved alert message
     success_saved_alert_message_css = "div.alert.alert-success"
 
+    #Tabs
+    expense_tab_id = "masraflar-tab"
+    evidence_tab_id = "deliller-tab"
+
+
+
 
 
 
