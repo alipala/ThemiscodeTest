@@ -42,6 +42,7 @@ class CaseDetails:
         self.add_new_evidence_btn_id = LocatorsCaseDetails.add_new_evidence_btn_id
         self.evidence_tab_id = Locators.evidence_tab_id
         self.add_new_evidence_file_btn_id = LocatorsCaseDetails.add_new_evidence_file_btn_id
+        self.delete_evidence_attachment_btn_xpath = LocatorsCaseDetails.delete_evidence_attachment_btn_xpath
 
     def expenses_tab_entry(self):
         # Select table last entry of table
@@ -109,9 +110,15 @@ class CaseDetails:
         title = self.driver.find_element_by_class_name(self.tab_h4_title_class)
         assert title.text == "Dosya Ekleri"
 
-    def add_evidence(self):
+    def add_evidence_attachment(self):
         self.driver.find_element_by_id(self.add_new_evidence_btn_id).click()
         self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH)
+
+    def delete_evidence_attachment(self):
+        self.driver.find_element_by_xpath(self.delete_evidence_attachment_btn_xpath).click()
+        # There should be a warning popup
+        assert "There should be a warning popup" == "There should be a warning"
+
 
 
 

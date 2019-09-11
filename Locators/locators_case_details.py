@@ -32,6 +32,7 @@ class LocatorsCaseDetails:
     no_evidence_p_xpath = "//p[contains(text(),'Henüz bir delil eklemediniz.')]"
     evidence_delete_btn_xpath = "//i[@class='fas fa-trash']" # TODO Button locate method should be changed
     add_new_evidence_file_btn_id = "dosya-ekle-1"
+    delete_evidence_attachment_btn_xpath = "//i[@class='fas fa-trash']"
 
     # Directive tab elements
     add_directive_btn_id = "btn-ibra_talimat-ekle"

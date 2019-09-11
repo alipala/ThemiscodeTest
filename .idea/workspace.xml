@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9944160-2d06-4caa-a654-85002a4e340c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Locators/locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Locators/locators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Locators/locators_case_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/Locators/locators_case_details.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/CaseDetailsPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CaseDetailsPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/test_case_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_case_details.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/test_lawsuit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test_lawsuit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaseDetailsPage.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CaseDetailsPage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pages/CaseDetailsPage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="112" column="76" lean-forward="true" selection-start-line="112" selection-start-column="76" selection-end-line="112" selection-end-column="76" />
+            <state relative-caret-position="506">
+              <caret line="116" column="34" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="34" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
                 <element signature="e#2230#3891#0" />
@@ -45,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_case_details.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_case_details.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/test_case_details.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+            <state relative-caret-position="474">
+              <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
               <folding>
                 <element signature="e#353#540#0" />
               </folding>
@@ -60,8 +57,8 @@
       <file leaf-file-name="locators_case_details.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Locators/locators_case_details.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="378">
+              <caret line="34" column="40" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -160,9 +157,9 @@
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/nose/twistedtools.py" />
         <option value="$PROJECT_DIR$/Locators/locators.py" />
         <option value="$PROJECT_DIR$/Tests/test_lawsuit.py" />
-        <option value="$PROJECT_DIR$/Tests/test_case_details.py" />
         <option value="$PROJECT_DIR$/Locators/locators_case_details.py" />
         <option value="$PROJECT_DIR$/Pages/CaseDetailsPage.py" />
+        <option value="$PROJECT_DIR$/Tests/test_case_details.py" />
       </list>
     </option>
   </component>
@@ -726,31 +723,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/test_case_details.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-          <folding>
-            <element signature="e#353#540#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Locators/locators_case_details.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="32" />
+        <state relative-caret-position="378">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages/CaseDetailsPage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="112" column="76" lean-forward="true" selection-start-line="112" selection-start-column="76" selection-end-line="112" selection-end-column="76" />
+        <state relative-caret-position="506">
+          <caret line="116" column="34" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="34" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
             <element signature="e#2230#3891#0" />
             <element signature="e#3926#5364#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/test_case_details.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+          <folding>
+            <element signature="e#353#540#0" />
           </folding>
         </state>
       </provider>

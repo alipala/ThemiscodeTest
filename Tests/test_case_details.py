@@ -45,7 +45,18 @@ class TestCaseDetails(Base):
         home = HomePage(driver)
         home.click_law_suit_page()
         case_details.evidence_tab_entry()
-        case_details.add_evidence()
+        case_details.add_evidence_attachment()
+
+    def test_delete_evidence(self):
+        driver = self.driver
+        self.login()
+        case_details = CaseDetails(driver)
+        home = HomePage(driver)
+        home.click_law_suit_page()
+        case_details.evidence_tab_entry()
+        case_details.delete_evidence_attachment()
+
+
 
 
     # Helper functions
