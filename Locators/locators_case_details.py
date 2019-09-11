@@ -1,10 +1,14 @@
 
-class CaseDetails:
+class LocatorsCaseDetails:
+
+    table_last_row_xpath = "//a[contains(text(),'Law and Person interaction / Ali Pala -')]"
+    tab_h4_title_class = "card-title"
 
     # Expenses tab elements
     received_payment_txtbox_id = "alinanOdeme_rakam"
     received_payment_detail_txtbox_id = "alinanOdeme_detay"
     received_payment_date_datetime_id = "alinanOdeme_tarih"
+    received_payment_currency_dropbox_id = "alinanOdeme_kur"
     received_payment_add_btn_xpath = "//button[@class='odeme btn btn-block btn-primary']"
     lawyer_fee_txtbox_id = "vekalet_ucreti_deger"
     lawyer_fee_currency_dropbox_name = "vekalet_ucreti_kur"
@@ -21,11 +25,13 @@ class CaseDetails:
     expense_add_btn_xpath = "//button[@class='masraf px-5 btn btn-danger']"
     expense_submit_btn_name = "kaydet"
     expense_discard_btn_xpath = "//button[contains(text(),'PTAL ET')]"
+    expense_and_payment_div_id = "mtxk"
 
     # Evidences tab elements
     add_new_evidence_btn_id = "yeni-delil-ekle"
     no_evidence_p_xpath = "//p[contains(text(),'Henüz bir delil eklemediniz.')]"
     evidence_delete_btn_xpath = "//i[@class='fas fa-trash']" # TODO Button locate method should be changed
+    add_new_evidence_file_btn_id = "dosya-ekle-1"
 
     # Directive tab elements
     add_directive_btn_id = "btn-ibra_talimat-ekle"
@@ -44,7 +50,7 @@ class CaseDetails:
 
     # Decisions tab elements
     file_type_dropbox_id = "tenzip-select"
-    file_type_h4_title_class = "card-title"
+
     # "Tenzip zaptı" elements
     scan_copy_checkbox_name = "tenzip_tarama"
     tenzip_details_txtbox_name = "tenzip_aciklama[]"

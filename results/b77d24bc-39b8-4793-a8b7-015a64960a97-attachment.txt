@@ -1,0 +1,10 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+<selenium.webdriver.remote.webelement.WebElement (session="0ea8714e1d66c520cd509723bdb6c437", element="0.7089364102408737-8")>
+#
+Bu ilk ödemedir. Daha sonraki ödemeler davanın seyrine göre değişecektir.:
+92019-02-10
+500000.00 TL
+-----------------------------------------
+Tests finished

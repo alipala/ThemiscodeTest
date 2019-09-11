@@ -91,7 +91,9 @@ class Locators:
     # Edit case scenario elements
     # Table elements
     # Edit button
-    table_last_row_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/table/tbody/tr[1]/td[6]/a[2]'
+    # Commented out this xpath locator since it is not reliable. It can be changed by developers
+    # table_last_row_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/table/tbody/tr[1]/td[6]/a[2]'
+    table_last_row_xpath = "//a[contains(text(),'Law and Person interaction / Ali Pala -')]"
     case_edit_information_btn_xpath = '//*[@id="dava-bilgileri"]/div/table/tbody/tr[1]/td[6]/a[1]'
     case_information_update_btn_id = "dava-bilgi-guncelle"
 

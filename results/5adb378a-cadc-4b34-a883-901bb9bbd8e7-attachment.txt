@@ -1,0 +1,7 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+['Bu ilk ödemedir. Daha sonraki ödemeler davanın seyrine göre değişecektir.:\n92019-02-10\n500000.00 TL']
+<class 'list'>
+-----------------------------------------
+Tests finished

@@ -1,0 +1,25 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+lawyer fee:
+20000.00 TL
+deneme masrafı:
+2019-09-11
+2000.00 TL
+toplam ödeme:
+2019-09-06
+100000.00 TL
+deneme ödemesi:
+2019-09-11
+10000.00 TL
+deneme ödemesi:
+2019-09-11
+10000.00 TL
+Bu ilk ödemedir. Daha sonraki ödemeler davanın seyrine göre değişecektir.:
+92019-02-10
+500000.00 TL
+Bu ilk ödemedir. Daha sonraki ödemeler davanın seyrine göre değişecektir.:
+92019-02-10
+500000.00 TL
+-----------------------------------------
+Tests finished

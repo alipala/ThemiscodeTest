@@ -1,0 +1,7 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+lawyer fee:
+20000.00 TL
+-----------------------------------------
+Tests finished

@@ -1,0 +1,5 @@
+Initiating Chrome driver
+-----------------------------------------
+Test started
+-----------------------------------------
+Tests finished
