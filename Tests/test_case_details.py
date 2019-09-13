@@ -6,6 +6,7 @@ from Pages.LoginPage import LoginPage
 from Pages.HomePage import HomePage
 from Base.base import Base
 import pandas as pd
+import time
 
 
 class TestCaseDetails(Base):
@@ -38,23 +39,45 @@ class TestCaseDetails(Base):
     #     case_details.expenses_tab_entry()
     #     case_details.add_expense()
 
-    def test_add_evidence(self):
-        driver = self.driver
-        self.login()
-        case_details = CaseDetails(driver)
-        home = HomePage(driver)
-        home.click_law_suit_page()
-        case_details.evidence_tab_entry()
-        case_details.add_evidence_attachment()
+    # def test_add_evidence_image(self):
+    #     driver = self.driver
+    #     self.login()
+    #     case_details = CaseDetails(driver)
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     case_details.evidence_tab_entry()
+    #     case_details.add_evidence_attachment_image()
+    #     time.sleep(5)
 
-    def test_delete_evidence(self):
+    # def test_add_evidence_pdf(self):
+    #     driver = self.driver
+    #     self.login()
+    #     case_details = CaseDetails(driver)
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     case_details.evidence_tab_entry()
+    #     case_details.add_evidence_attachment_pdf()
+    #     time.sleep(5)
+
+    def test_add_evidence_excel(self):
         driver = self.driver
         self.login()
         case_details = CaseDetails(driver)
         home = HomePage(driver)
         home.click_law_suit_page()
         case_details.evidence_tab_entry()
-        case_details.delete_evidence_attachment()
+        case_details.add_evidence_attachment_excel()
+
+
+
+    # def test_delete_evidence(self):
+    #     driver = self.driver
+    #     self.login()
+    #     case_details = CaseDetails(driver)
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     case_details.evidence_tab_entry()
+    #     case_details.delete_evidence_attachment()
 
 
 

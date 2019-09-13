@@ -33,6 +33,8 @@ class LocatorsCaseDetails:
     evidence_delete_btn_xpath = "//i[@class='fas fa-trash']" # TODO Button locate method should be changed
     add_new_evidence_file_btn_id = "dosya-ekle-1"
     delete_evidence_attachment_btn_xpath = "//i[@class='fas fa-trash']"
+    evidence_file_div_class_xpath = '//*[@id="delil-crd-1"]/div/div[2]/div/div'
+
 
     # Directive tab elements
     add_directive_btn_id = "btn-ibra_talimat-ekle"

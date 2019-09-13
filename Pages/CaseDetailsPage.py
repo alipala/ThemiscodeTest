@@ -2,6 +2,7 @@ from Locators.locators_case_details import LocatorsCaseDetails
 from Locators.locators import Locators
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
+import time
 
 
 class CaseDetails:
@@ -17,7 +18,9 @@ class CaseDetails:
     EXPENSE_PAYMENT = "10000"
     EXPENSE_PAYMENT_DETAIL = "Davanın açılması için " \
                              "müvekkil yerine yapılan harcamalar"
-    FILE_PATH = "C:/Users/z003d7tu/Desktop/ali.jPG"
+    FILE_PATH_IMAGE = "C:/Users/z003d7tu/Desktop/ali.jPG"
+    FILE_PATH_PDF = "C:/Users/z003d7tu/Desktop/big-o-cheatsheet.pdf"
+    FILE_PATH_EXCEL = "C:/Users/z003d7tu/Desktop/SSK.xlsx"
 
     def __init__(self, driver):
         self.driver = driver
@@ -43,6 +46,7 @@ class CaseDetails:
         self.evidence_tab_id = Locators.evidence_tab_id
         self.add_new_evidence_file_btn_id = LocatorsCaseDetails.add_new_evidence_file_btn_id
         self.delete_evidence_attachment_btn_xpath = LocatorsCaseDetails.delete_evidence_attachment_btn_xpath
+        self.evidence_file_div_class_xpath = LocatorsCaseDetails.evidence_file_div_class_xpath
 
     def expenses_tab_entry(self):
         # Select table last entry of table
@@ -110,12 +114,56 @@ class CaseDetails:
         title = self.driver.find_element_by_class_name(self.tab_h4_title_class)
         assert title.text == "Dosya Ekleri"
 
-    def add_evidence_attachment(self):
+    def add_evidence_attachment_image(self):
         self.driver.find_element_by_id(self.add_new_evidence_btn_id).click()
-        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH)
+        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH_IMAGE)
+        time.sleep(2)
+        try:
+            img_list = []
+            source = self.driver.find_elements_by_tag_name('img')
+            for image in source:
+                img_list.append(image.get_attribute('src'))
+            img_link = img_list[1]
+            self.driver.get(img_link)
+            img_title = img_link[37:]
+            assert img_title in self.driver.title
+        except Exception as e:
+            raise e
+
+    def add_evidence_attachment_pdf(self):
+        self.driver.find_element_by_id(self.add_new_evidence_btn_id).click()
+        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH_PDF)
+        time.sleep(2)
+        try:
+            div = self.driver.find_element_by_xpath(self.evidence_file_div_class_xpath)
+            pdf_link = div.find_element_by_css_selector('a').get_attribute('href')
+            pdf = pdf_link[37:]
+            assert ".pdf" in pdf
+        except Exception as e:
+            raise e
+
+    def add_evidence_attachment_excel(self):
+        self.driver.find_element_by_id(self.add_new_evidence_btn_id).click()
+        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH_EXCEL)
+        time.sleep(2)
+        try:
+            div = self.driver.find_element_by_xpath(self.evidence_file_div_class_xpath)
+            excel_link = div.find_element_by_css_selector('a').get_attribute('href')
+            self.driver.get(excel_link)
+            print(self.driver.title)
+            assert "404 Page Not Found" != self.driver.title
+        except Exception as e:
+            raise e
+
+
+
+
+
+
 
     def delete_evidence_attachment(self):
         self.driver.find_element_by_xpath(self.delete_evidence_attachment_btn_xpath).click()
+        time.sleep(2)
         # There should be a warning popup
         assert "There should be a warning popup" == "There should be a warning"
 
