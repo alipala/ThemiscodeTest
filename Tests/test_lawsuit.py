@@ -27,6 +27,15 @@ class TestLawsuit(Base):
     #         raise
     #         print("Title is wrong", format(e))
     #
+
+    def test_case_list_records(self):
+        driver = self.driver
+        self.login()
+        lawsuit = LawsuitPage(driver)
+        home = HomePage(driver)
+        home.click_law_suit_page()
+        lawsuit.case_list_records()
+
     # def test_case_create_save(self):
     #     driver = self.driver
     #     lawsuit = LawsuitPage(driver)
@@ -41,13 +50,13 @@ class TestLawsuit(Base):
     #     self.case_create()
     #     lawsuit.discard_case()
 
-    def test_edit_last_case(self):
-        driver = self.driver
-        self.login()
-        lawsuit = LawsuitPage(driver)
-        home = HomePage(driver)
-        home.click_law_suit_page()
-        lawsuit.case_entry_information_edit()
+    # def test_edit_last_case(self):
+    #     driver = self.driver
+    #     self.login()
+    #     lawsuit = LawsuitPage(driver)
+    #     home = HomePage(driver)
+    #     home.click_law_suit_page()
+    #     lawsuit.case_entry_information_edit()
 
     # def test_find_case_file_by_no(self):
     #     driver = self.driver
@@ -72,7 +81,6 @@ class TestLawsuit(Base):
     #     home.click_law_suit_page()
     #     lawsuit = LawsuitPage(driver)
     #     lawsuit.filter_case_by_case_type()
-
 
     # def test_clear_sheet_no_filter(self):
     #     driver = self.driver

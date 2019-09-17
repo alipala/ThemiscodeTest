@@ -13,6 +13,9 @@ class Locators:
 
     # LawsuitPage elements
 
+    # List records
+    data_records_dropbox_name = "DataTables_Table_0_length"
+
     # Find case files elements
     filter_case_state_dropbox_id = "inputState"
     filter_case_client_txtbox_name = "muvekkil"
@@ -104,7 +107,9 @@ class Locators:
     #Tabs
     expense_tab_id = "masraflar-tab"
     evidence_tab_id = "deliller-tab"
-
+    request_tab_id = "ibralar_talimatlar-tab"
+    letter_of_application_id = "dilekceler-tab"
+    decisions_tab_id = "anakararlar-tab"
 
 
 

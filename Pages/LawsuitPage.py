@@ -1,6 +1,8 @@
 from Locators.locators import Locators
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
+from Pages.CaseDetailsPage import CaseDetails
+import time
 
 
 class LawsuitPage:
@@ -33,7 +35,6 @@ class LawsuitPage:
     DETAILS = 'Dava hakkındaki detaylar buraya gelecek. ' \
               'Her iki taraf dinlendikten sonra avukat ' \
               'hatırlamak için bu kısımları doldurabilir.'
-
 
     __before_case_count = 0
 
@@ -103,6 +104,16 @@ class LawsuitPage:
         self.case_information_update_btn_id = Locators.case_information_update_btn_id
 
         self.success_saved_alert_message_css = Locators.success_saved_alert_message_css
+
+        self.data_records_dropbox_name = Locators.data_records_dropbox_name
+
+    def case_list_records(self):
+        select = Select(self.driver.find_element_by_name(self.data_records_dropbox_name))
+        select.select_by_value('25')
+        time.sleep(2)
+        # Count table rows
+        row_count = len(self.driver.find_elements_by_xpath('//*[@id="DataTables_Table_0"]/tbody/tr'))
+        assert row_count == 25
 
     def click_case_create_btn(self):
         global __before_case_count
@@ -257,6 +268,7 @@ class LawsuitPage:
         assert __before_case_count == after_case_count
 
     def case_entry_information_edit(self):
+        CaseDetails.workaround_table_list_entries()
         # Select table last entry
         self.driver.find_element_by_xpath(self.table_last_row_xpath).click()
         # Update button icon first click
