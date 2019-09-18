@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 from Pages.CaseDetailsPage import CaseDetails
 import time
+import allure
 
 
 class LawsuitPage:
@@ -38,22 +39,24 @@ class LawsuitPage:
 
     __before_case_count = 0
 
+    # Locators initialization
     def __init__(self, driver):
         self.driver = driver
 
-        self.filter_file_no_txtbox_id = Locators.filter_file_no_txtbox_id
-        self.filter_search_btn_id = Locators.filter_search_btn_id
+        self.filter_file_no_txtbox_name = Locators.filter_file_no_txtbox_name
+        self.filter_search_btn_name = Locators.filter_search_btn_name
         self.filtered_search_result_sheet_no_xpath = Locators.filtered_search_result_sheet_no_xpath
         self.clear_filter_btn_xpath = Locators.clear_filter_btn_xpath
         self.filtered_table_first_row_xpath = Locators.filtered_table_first_row_xpath
         self.back_error_message_css = Locators.back_error_message_css
-        self.filtered_table_first_row_pre_xpath = Locators.filtered_table_first_row_pre_xpath
-        self.filter_case_state_dropbox_id = Locators.filter_case_state_dropbox_id
+        self.filtered_table_first_row_third_col_xpath = Locators.filtered_table_first_row_third_col_xpath
+        self.filtered_table_first_row_4_col_xpath = Locators.filtered_table_first_row_4_col_xpath
+        self.filter_case_state_dropbox_name = Locators.filter_case_state_dropbox_name
         self.filter_case_type_dropbox_name = Locators.filter_case_type_dropbox_name
 
         self.case_table_xpath = Locators.case_table_xpath
         self.table_last_row_xpath = Locators.table_last_row_xpath
-        self.case_create_btn_id = Locators.case_create_btn_id
+        self.case_create_btn_xpath = Locators.case_create_btn_xpath
         self.case_type_dropbox_id = Locators.case_type_dropbox_id
         self.case_type_detail_dropbox_id = Locators.case_type_detail_dropbox_id
         self.case_subject_txtbox_id = Locators.case_subject_txtbox_id
@@ -108,17 +111,20 @@ class LawsuitPage:
         self.data_records_dropbox_name = Locators.data_records_dropbox_name
 
     def case_list_records(self):
-        select = Select(self.driver.find_element_by_name(self.data_records_dropbox_name))
-        select.select_by_value('25')
+        driver = self.driver
+        case_details = CaseDetails(driver)
+        case_details.workaround_table_list_entries()
         time.sleep(2)
         # Count table rows
         row_count = len(self.driver.find_elements_by_xpath('//*[@id="DataTables_Table_0"]/tbody/tr'))
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert row_count == 25
 
     def click_case_create_btn(self):
         global __before_case_count
         __before_case_count = len(self.driver.find_elements_by_xpath(self.case_table_xpath))
-        self.driver.find_element_by_id(self.case_create_btn_id).click()
+        self.driver.find_element_by_xpath(self.case_create_btn_xpath).click()
 
     def fill_case_information(self):
         select = Select(self.driver.find_element_by_id(self.case_type_dropbox_id))
@@ -258,17 +264,26 @@ class LawsuitPage:
         select.select_by_value('21')
 
     def save_case(self):
+        driver = self.driver
         self.driver.find_element_by_name(self.submit_btn_name).click()
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert self.driver.find_element_by_css_selector(self.success_saved_alert_message_css).text == "Dava kaydı başarıyla oluşturuldu."
 
     def discard_case(self):
+        driver = self.driver
         global __before_case_count
         self.driver.find_element_by_css_selector(self.discard_btn_css).click()
         after_case_count = len(self.driver.find_elements_by_xpath(self.case_table_xpath))
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert __before_case_count == after_case_count
 
     def case_entry_information_edit(self):
-        CaseDetails.workaround_table_list_entries()
+        driver = self.driver
+        case_details = CaseDetails(driver)
+        case_details.workaround_table_list_entries()
+        time.sleep(2)
         # Select table last entry
         self.driver.find_element_by_xpath(self.table_last_row_xpath).click()
         # Update button icon first click
@@ -283,54 +298,78 @@ class LawsuitPage:
         self.driver.find_element_by_xpath(self.case_edit_information_btn_xpath).click()
 
         txt_temp = self.driver.find_element_by_id(self.case_subject_txtbox_id)
-
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
+        # The information should be updated by clicking "Güncelle" Button.
+        # Currently the user has been forced to click "Kaydet" button as well.
         assert txt_temp.get_attribute('value') == "Law and Person interaction updated"
 
     def filter_case_by_file_no(self):
-        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).clear()
-        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).send_keys(self.SHEET_NO)
-        self.driver.find_element_by_id(self.filter_search_btn_id).click()
+        driver = self.driver
+        self.driver.find_element_by_name(self.filter_file_no_txtbox_name).clear()
+        self.driver.find_element_by_name(self.filter_file_no_txtbox_name).send_keys(self.SHEET_NO)
+        self.driver.find_element_by_name(self.filter_search_btn_name).click()
 
         # filtered search value of "föy no"
         sheet_no = self.driver.find_element_by_xpath(self.filtered_search_result_sheet_no_xpath)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert sheet_no.text == '9000'
 
     def clear_filtered_search(self):
+        driver = self.driver
         self.driver.find_element_by_xpath(self.clear_filter_btn_xpath).click()
-        txt_temp = self.driver.find_element_by_id(self.filter_file_no_txtbox_id)
+        txt_temp = self.driver.find_element_by_name(self.filter_file_no_txtbox_name)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert txt_temp.get_attribute('value') == ""
 
     def back_previous_page(self):
-        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).clear()
-        self.driver.find_element_by_id(self.filter_file_no_txtbox_id).send_keys(self.SHEET_NO)
-        self.driver.find_element_by_id(self.filter_search_btn_id).click()
+        driver = self.driver
+        self.driver.find_element_by_name(self.filter_file_no_txtbox_name).clear()
+        self.driver.find_element_by_name(self.filter_file_no_txtbox_name).send_keys(self.SHEET_NO)
+        self.driver.find_element_by_name(self.filter_search_btn_name).click()
         self.driver.find_element_by_xpath(self.filtered_table_first_row_xpath).click()
 
         # This is the best way to go to back
         self.driver.execute_script("window.history.go(-1)")
         h1_error_message = self.driver.find_element_by_css_selector(self.back_error_message_css)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert h1_error_message.text != "Confirm Form Resubmission"
 
     def filter_case_by_case_state(self):
-        # Select "İnfaz" value in dropbox
-        select = Select(self.driver.find_element_by_id(self.filter_case_state_dropbox_id))
-        select.select_by_value('İnfaz')
+        driver = self.driver
+        # Select "Derdest" value in dropbox
+        select = Select(self.driver.find_element_by_name(self.filter_case_state_dropbox_name))
+        select.select_by_value('Derdest')
 
         # Click "Ara" button
-        self.driver.find_element_by_id(self.filter_search_btn_id).click()
-        temp_txt = self.driver.find_element_by_xpath(self.filtered_table_first_row_pre_xpath)
-        txt_content = temp_txt.get_attribute('textContent')
-        print(txt_content)
-        assert "blg_i_dava_durumu' => 'İnfaz'" in txt_content
+        self.driver.find_element_by_name(self.filter_search_btn_name).click()
+        # Wait for fulfilling the table
+        time.sleep(2)
+        # The third column of the table in the first filtered result
+        # It should be located "Durum" column in the table
+        temp_txt = self.driver.find_element_by_xpath(self.filtered_table_first_row_third_col_xpath)
+        print(temp_txt.text)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
+        assert "This column should be Derdest" in temp_txt.text
 
     def filter_case_by_case_type(self):
+        driver = self.driver
         select = Select(self.driver.find_element_by_name(self.filter_case_type_dropbox_name))
         select.select_by_value('Hukuk')
-        self.driver.find_element_by_id(self.filter_search_btn_id).click()
-        temp_txt = self.driver.find_element_by_xpath(self.filtered_table_first_row_pre_xpath)
-        txt_content = temp_txt.get_attribute('textContent')
-        print(txt_content)
-        assert "'blg_i_dava_turu' => 'Hukuk'" in txt_content
+        self.driver.find_element_by_name(self.filter_search_btn_name).click()
+        # Wait for fulfilling the table
+        time.sleep(2)
+        # The 4. column of the table in the first filtered result
+        # It should be located "Durum" column in the table
+        temp_txt = self.driver.find_element_by_xpath(self.filtered_table_first_row_4_col_xpath)
+        print(temp_txt.text)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
+        assert "This column should be Hukuk" in temp_txt.text
 
     # This test will be implemented after development works well enough
     def filter_case_by_client(self):

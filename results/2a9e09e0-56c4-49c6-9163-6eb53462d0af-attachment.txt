@@ -1,9 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-m
-t
-x
-k
------------------------------------------
-Tests finished

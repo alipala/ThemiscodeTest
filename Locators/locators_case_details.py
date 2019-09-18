@@ -31,10 +31,12 @@ class LocatorsCaseDetails:
     # Evidences tab elements
     add_new_evidence_btn_id = "yeni-delil-ekle"
     no_evidence_p_xpath = "//p[contains(text(),'Henüz bir delil eklemediniz.')]"
-    evidence_delete_btn_xpath = "//i[@class='fas fa-trash']" # TODO Button locate method should be changed
-    add_new_evidence_file_btn_id = "dosya-ekle-1"
+    evidence_delete_btn_xpath = "//i[@class='fas fa-trash']"  # TODO Button locate method should be changed
+    add_new_evidence_file_btn_id = "dosya-ekle-"
     delete_evidence_attachment_btn_xpath = "//i[@class='fas fa-trash']"
-    evidence_file_div_class_xpath = '//*[@id="delil-crd-1"]/div/div[2]/div/div'
+    evidence_file_div_class_image_xpath = '//*[@id="delil-crd-1"]/div/div[2]/div/div'
+    evidence_file_div_class_pdf_xpath = '//*[@id="delil-crd-2"]/form/div/div[2]/div/div'
+    evidence_file_div_class_xls_xpath = '//*[@id="delil-crd-3"]/form/div/div[2]/div/div'
 
     # Directive tab elements
     add_directive_btn_id = "btn-ibra_talimat-ekle"

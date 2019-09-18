@@ -1,6 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-http://themiscode.com/assets/img/819292.png
------------------------------------------
-Tests finished

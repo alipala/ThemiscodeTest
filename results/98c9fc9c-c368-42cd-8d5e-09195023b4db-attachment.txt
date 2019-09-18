@@ -1,6 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/pre[1]/text()
------------------------------------------
-Tests finished

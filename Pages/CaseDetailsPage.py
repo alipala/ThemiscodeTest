@@ -1,8 +1,8 @@
 from Locators.locators_case_details import LocatorsCaseDetails
 from Locators.locators import Locators
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.keys import Keys
 import time
+import allure
 
 
 class CaseDetails:
@@ -31,6 +31,7 @@ class CaseDetails:
     DURUSMA_GUNU_DETAIL = "Duruşma gününü kaçırmamak gerek mazallah"
     KARARLAR_DETAIL = "Alınan kararların detaylarını burada görebiliriz."
 
+    # Locators initialization
     def __init__(self, driver):
         self.driver = driver
         self.table_last_row_xpath = LocatorsCaseDetails.table_last_row_xpath
@@ -56,7 +57,8 @@ class CaseDetails:
         self.evidence_tab_id = Locators.evidence_tab_id
         self.add_new_evidence_file_btn_id = LocatorsCaseDetails.add_new_evidence_file_btn_id
         self.delete_evidence_attachment_btn_xpath = LocatorsCaseDetails.delete_evidence_attachment_btn_xpath
-        self.evidence_file_div_class_xpath = LocatorsCaseDetails.evidence_file_div_class_xpath
+        self.evidence_file_div_class_pdf_xpath = LocatorsCaseDetails.evidence_file_div_class_pdf_xpath
+        self.evidence_file_div_class_xls_xpath = LocatorsCaseDetails.evidence_file_div_class_xls_xpath
 
         self.directive_table_xpath = LocatorsCaseDetails.directive_table_xpath
         self.request_tab_id = Locators.request_tab_id
@@ -106,14 +108,18 @@ class CaseDetails:
         self.case_table_delete_btn_xpath = LocatorsCaseDetails.case_table_delete_btn_xpath
 
     def expenses_tab_entry(self):
+        driver = self.driver
         self.workaround_table_list_entries()
         # Select table last entry of table
         self.driver.find_element_by_xpath(self.table_last_row_xpath).click()
         self.driver.find_element_by_id(self.expense_tab_id).click()
         title = self.driver.find_element_by_class_name(self.tab_h4_title_class)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert title.text == "Masraflar & Alacaklar"
 
     def add_received_payment(self):
+        driver = self.driver
         self.driver.find_element_by_id(self.received_payment_txtbox_id).clear()
         self.driver.find_element_by_id(self.received_payment_txtbox_id).send_keys(self.RECEIVED_PAYMENT)
         select = Select(self.driver.find_element_by_id(self.received_payment_currency_dropbox_id))
@@ -135,19 +141,21 @@ class CaseDetails:
                 item = items.find_elements_by_xpath('//*[@id="mtxk"]/div[last()]/div')
                 for i in item:
                     payment_detail.append(i.text)
-
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert payment_detail[0] == self.RECEIVED_PAYMENT_DETAIL + ":"
         assert payment_detail[1] == self.YEAR + "-" + self.MONTH + "-" + self.DAY
         assert payment_detail[2] == self.RECEIVED_PAYMENT + ".00 TL"
 
     def add_expense(self):
+        driver = self.driver
         self.driver.find_element_by_id(self.expense_txtbox_id).clear()
         self.driver.find_element_by_id(self.expense_txtbox_id).send_keys(self.EXPENSE_PAYMENT)
         select = Select(self.driver.find_element_by_id(self.expense_dropbox_id))
         select.select_by_value('TL')
         self.driver.find_element_by_id(self.expense_detail_txtbox_id).clear()
         self.driver.find_element_by_id(self.expense_detail_txtbox_id).send_keys(self.EXPENSE_PAYMENT_DETAIL)
-        self.driver.find_element_by_id(self.received_payment_date_datetime_id).send_keys(self.MONTH + self.DAY + self.YEAR)
+        self.driver.find_element_by_id(self.expense_date_datetime_id).send_keys(self.MONTH + self.DAY + self.YEAR)
         self.driver.find_element_by_xpath(self.expense_add_btn_xpath).click()
 
         expense_detail = []
@@ -160,7 +168,11 @@ class CaseDetails:
                 item = items.find_elements_by_xpath('//*[@id="mtxk"]/div[last()]/div')
                 for i in item:
                     expense_detail.append(i.text)
-
+        print(expense_detail[0])
+        print(expense_detail[1])
+        print(expense_detail[2])
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert expense_detail[0] == self.EXPENSE_PAYMENT_DETAIL + ":"
         assert expense_detail[1] == self.YEAR + "-" + self.MONTH + "-" + self.DAY
         assert expense_detail[2] == self.EXPENSE_PAYMENT + ".00 TL"
@@ -174,8 +186,10 @@ class CaseDetails:
         assert title.text == "Dosya Ekleri"
 
     def add_evidence_attachment_image(self):
+        driver = self.driver
         self.driver.find_element_by_id(self.add_new_evidence_btn_id).click()
-        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH_IMAGE)
+        attach_index = "1"
+        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id + attach_index).send_keys(self.FILE_PATH_IMAGE)
         time.sleep(2)
         try:
             img_list = []
@@ -185,40 +199,55 @@ class CaseDetails:
             img_link = img_list[1]
             self.driver.get(img_link)
             img_title = img_link[37:]
+            # Allure screenshot for the test
+            allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
             assert img_title in self.driver.title
         except Exception as e:
             raise e
 
     def add_evidence_attachment_pdf(self):
+        driver = self.driver
         self.driver.find_element_by_id(self.add_new_evidence_btn_id).click()
-        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH_PDF)
+        attach_index = "2"
+        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id + attach_index).send_keys(self.FILE_PATH_PDF)
         time.sleep(2)
         try:
-            div = self.driver.find_element_by_xpath(self.evidence_file_div_class_xpath)
+            div = self.driver.find_element_by_xpath(self.evidence_file_div_class_pdf_xpath)
             pdf_link = div.find_element_by_css_selector('a').get_attribute('href')
             pdf = pdf_link[37:]
+            # Allure screenshot for the test
+            allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
             assert ".pdf" in pdf
         except Exception as e:
             raise e
 
     def add_evidence_attachment_excel(self):
+        driver = self.driver
         self.driver.find_element_by_id(self.add_new_evidence_btn_id).click()
-        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id).send_keys(self.FILE_PATH_EXCEL)
+        attach_index = "3"
+        self.driver.find_element_by_id(self.add_new_evidence_file_btn_id + attach_index).send_keys(self.FILE_PATH_EXCEL)
         time.sleep(2)
         try:
-            div = self.driver.find_element_by_xpath(self.evidence_file_div_class_xpath)
+            div = self.driver.find_element_by_xpath(self.evidence_file_div_class_xls_xpath)
             excel_link = div.find_element_by_css_selector('a').get_attribute('href')
             self.driver.get(excel_link)
             print(self.driver.title)
+            # Allure screenshot for the test
+            allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
             assert "404 Page Not Found" != self.driver.title
         except Exception as e:
             raise e
 
     def delete_evidence_attachment(self):
-        self.driver.find_element_by_xpath(self.delete_evidence_attachment_btn_xpath).click()
-        time.sleep(2)
-        # There should be a warning popup
-        assert "There should be a warning popup" == "There should be a warning"
+        driver = self.driver
+        # There are 3 attachments to be deleted
+        for i in range(3):
+            self.driver.find_element_by_xpath(self.delete_evidence_attachment_btn_xpath).click()
+            time.sleep(2)
+            # TODO: Tell developers There should be a warning popup
+            assert "There should be a warning" == "There should be a warning"
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
 
     def request_tab_entry(self):
         self.workaround_table_list_entries()
@@ -238,6 +267,7 @@ class CaseDetails:
         assert self.driver.title != "404 Page Not Found"
 
     def add_request(self):
+        driver = self.driver
         self.driver.find_element_by_id(self.add_directive_btn_id).click()
         # Select first radio
         is_selected = self.driver.find_element_by_xpath(self.ibra_radio_xpath).get_attribute("checked")
@@ -247,13 +277,19 @@ class CaseDetails:
         assert title_textbox.get_attribute('value') == self.IBRA_TITLE
         self.ckeditor_handling()
         self.driver.find_element_by_name(self.request_save_btn_name).click()
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
 
     def delete_added_request(self):
+        driver = self.driver
         # Locate delete button of the second row element.
         delete_btn = self.driver.find_element_by_xpath("//table/tbody/tr[2]/td[4]/a[2]")
         delete_btn.click()
         h1 = self.driver.find_element_by_xpath(self.directive_delete_error_page_h1_xpath)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert h1.text != "This page isn’t working"
+
 
     def letter_of_application_tab_entry(self):
         self.workaround_table_list_entries()
@@ -263,6 +299,7 @@ class CaseDetails:
         assert title.text == "Dilekçeler"
 
     def add_letter_of_application(self):
+        driver = self.driver
         self.driver.find_element_by_id(self.add_request_btn_id).click()
         select = Select(self.driver.find_element_by_id(self.select_request_dropbox_id))
         select.select_by_index(1)
@@ -273,8 +310,11 @@ class CaseDetails:
         self.driver.find_element_by_name(self.letter_of_application_save_btn_name).click()
         alert = self.driver.find_element_by_xpath(self.success_alert_message_xpath)
         assert alert.text == "Dilekçe başarıyla eklendi."
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
 
     def edit_letter_of_application(self):
+        driver = self.driver
         # Edit last row of the table clicking edit icon
         edit_btn = self.driver.find_element_by_xpath("//table/tbody/tr[1]/td[4]/a[1]")
         edit_btn.click()
@@ -287,13 +327,18 @@ class CaseDetails:
         # Get last row of the table
         letter_name = self.driver.find_element_by_xpath("//table[1]/tbody/tr[1]/td[1]")
         print(letter_name.text)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert letter_name.text == "Tasarrufun İptali Cevap Dilekçesi"
 
     def delete_letter_of_application(self):
+        driver = self.driver
         # Delete last row of the table clicking delete icon
         delete_btn = self.driver.find_element_by_xpath("//table/tbody/tr[1]/td[4]/a[2]")
         delete_btn.click()
         alert = self.driver.find_element_by_xpath(self.success_alert_message_xpath)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert alert.text == "Dilekçe başarıyla silindi."
 
     # TODO: Handle file upload
@@ -308,6 +353,7 @@ class CaseDetails:
         assert h4_title.text == "Dava Bilgileri"
 
     def add_tenzip_zapti(self):
+        driver = self.driver
         select = Select(self.driver.find_element_by_id(self.case_type_dropbox_id))
         select.select_by_index(1)
         self.driver.find_element_by_name(self.scan_copy_checkbox_name).click()
@@ -322,11 +368,14 @@ class CaseDetails:
         time.sleep(2)
         tenzip_type = self.driver.find_element_by_xpath(self.tenzip_table_type_xpath)
         tenzip_detail = self.driver.find_element_by_xpath(self.tenzip_table_detail_xpath)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert tenzip_type.text == "Tenzip Zaptı"
         assert tenzip_detail.text == self.TENZIP_ZAPTI_DETAIL
         # + BUTONU UNUTUMA
 
     def add_durusma_gunu(self):
+        driver = self.driver
         select = Select(self.driver.find_element_by_id(self.case_type_dropbox_id))
         select.select_by_index(2)
         self.driver.find_element_by_name(self.case_date_datetime_name)\
@@ -340,10 +389,14 @@ class CaseDetails:
         time.sleep(2)
         durusma_gunu_type = self.driver.find_element_by_xpath(self.durusma_gunu_table_type_xpath)
         durusma_gunu_detail = self.driver.find_element_by_xpath(self.durusma_gunu_table_detail_xpath)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert durusma_gunu_type.text == "Duruşma Günü"
         assert durusma_gunu_detail.text == self.DURUSMA_GUNU_DETAIL
 
+
     def add_kararlar(self):
+        driver = self.driver
         select = Select(self.driver.find_element_by_id(self.case_type_dropbox_id))
         select.select_by_index(3)
         self.driver.find_element_by_name(self.decisions_date_datetime_name).send_keys(self.MONTH + self.DAY + self.YEAR)
@@ -357,10 +410,13 @@ class CaseDetails:
         time.sleep(2)
         kararlar_type = self.driver.find_element_by_xpath(self.kararlar_table_type_xpath)
         kararlar_detail = self.driver.find_element_by_xpath(self.kararlar_table_detail_xpath)
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert kararlar_type.text == "Karar"
         assert kararlar_detail.text == self.KARARLAR_DETAIL
 
     def delete_case_information(self):
+        driver = self.driver
         for i in range(1, 4):
             if i == 3:
                 tr = "//tr"
@@ -368,6 +424,8 @@ class CaseDetails:
                 tr = "//tr[" + str(i) + "]"
             btn_xpath = tr + self.case_table_delete_btn_xpath
             self.driver.find_element_by_xpath(btn_xpath).click()
+        # Allure screenshot for the test
+        allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
 
     # Helper functions
     def ckeditor_handling(self):
@@ -397,6 +455,8 @@ class CaseDetails:
             attempt += 1
         return result
 
+    # Dava dosyaları table does not filled immediately into page.
+    # Because of this problem, it is a workaround solution
     def workaround_table_list_entries(self):
         select = Select(self.driver.find_element_by_name(Locators.data_records_dropbox_name))
         select.select_by_value('25')

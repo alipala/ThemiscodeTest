@@ -59,3 +59,8 @@
 * https://docs.qameta.io/allure/#_pytest
 * https://github.com/allure-framework/allure-python/tree/master/allure-pytest
 * https://www.youtube.com/watch?v=gbEg0grSYSs
+
+## Allure python useful links
+* https://github.com/allure-framework/allure-python
+* https://github.com/allure-examples/allure-python-examples
+* https://pypi.org/project/pytest-allure-adaptor/

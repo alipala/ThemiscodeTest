@@ -1,6 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-Case count is: 1
------------------------------------------
-Tests finished

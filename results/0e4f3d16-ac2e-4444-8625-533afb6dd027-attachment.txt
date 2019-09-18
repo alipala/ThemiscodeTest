@@ -1,8 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
- Element name: Bu ilk ödemedir. Daha sonraki ödemeler davanın seyrine göre değişecektir.:
-92019-02-10
-500000.00 TL
------------------------------------------
-Tests finished

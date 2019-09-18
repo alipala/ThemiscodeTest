@@ -9,19 +9,22 @@ import allure
 import pytest
 
 
+@allure.feature("Ana sayfa logout")
 class TestHome(Base):
     __user_data_file = r"\login_details.xlsx"
     df = pd.read_excel(os.getcwd() + __user_data_file)
 
-    # @allure.feature("Home page logout")
-    # @allure.story("The user should logout from system with logout button")
-    # @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story('Logout')
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.testcase('TESTCASE-1')
     def test_home_logout(self):
         driver = self.driver
         self.login()
         home = HomePage(driver)
         home.logout()
         try:
+            # Allure screenshot for the test
+            allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
             assert "Ana Sayfa - Dava & İcra Takip" in driver.title
             print("Title is ok")
         except Exception as e:

@@ -1,6 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-Masraflar & Alacaklar
------------------------------------------
-Tests finished

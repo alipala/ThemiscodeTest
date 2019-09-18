@@ -1,7 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-Title is wrong assert 'The user name is ' in '404 Page Not Found'
- +  where '404 Page Not Found' = <selenium.webdriver.chrome.webdriver.WebDriver (session="fb84f2e50640bb621a408e4559e896c3")>.title
------------------------------------------
-Tests finished

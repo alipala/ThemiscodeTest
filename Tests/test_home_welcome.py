@@ -6,23 +6,24 @@ from Pages.HomePage import HomePage
 from Base.base import Base
 import pandas as pd
 import allure
-import pytest
-import time
 
 
+@allure.feature('Anasayfa hoşgeldin linki')
 class TestHomeWelcome(Base):
     __user_data_file = r"\login_details.xlsx"
     df = pd.read_excel(os.getcwd() + __user_data_file)
 
-    # @allure.feature("Home page welcome user click")
-    # @allure.story("The user may click the welcome user link")
-    # @allure.severity(allure.severity_level.NORMAL)
+    @allure.story('Anasayfa kullanıcı linki')
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.testcase('TESTCASE-1')
     def test_home_welcome_link(self):
         driver = self.driver
         self.login()
         home = HomePage(driver)
         home.click_welcome_user_link()
         try:
+            # Allure screenshot for the test
+            allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
             assert "The user name is " == driver.title
         except Exception as e:
             raise

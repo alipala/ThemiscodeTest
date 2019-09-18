@@ -1,6 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-Law and Person interaction updated
------------------------------------------
-Tests finished

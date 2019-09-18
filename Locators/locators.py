@@ -17,24 +17,25 @@ class Locators:
     data_records_dropbox_name = "DataTables_Table_0_length"
 
     # Find case files elements
-    filter_case_state_dropbox_id = "inputState"
+    filter_case_state_dropbox_name = "durum"
     filter_case_client_txtbox_name = "muvekkil"
-    filter_file_no_txtbox_id = "foy-no"
+    filter_file_no_txtbox_name = "foy_no"
     filter_defendant_txtbox_name = "karsi_taraf"
     filter_case_type_dropbox_name = "dava_turu"
-    filter_search_btn_id = "ara-btn"
+    filter_search_btn_name = "seach"
     filtered_search_result_sheet_no_xpath = "//a[contains(text(),'9000')]"
-    clear_filter_btn_xpath = "//button[contains(@class,'temizle mr-2')]"
+    clear_filter_btn_xpath = '//*[@id="foyler"]/form/div/div[1]/div[2]/a'
     filtered_table_first_row_xpath = "//table[@class='table table-striped']//tbody//tr//th[1]"
     back_error_message_css = "#main-message > h1"
-    filtered_table_first_row_pre_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/pre[1]'
+    filtered_table_first_row_third_col_xpath = '//*[@id="DataTables_Table_0"]/tbody/tr[1]/td[3]'
+    filtered_table_first_row_4_col_xpath = '//*[@id="DataTables_Table_0"]/tbody/tr[1]/td[4]'
 
 
 
 
     # Case files elements
     case_table_xpath = '//*[@id="dava-dosyalari-goruntule"]/div/div[2]/div/table/tbody/tr'
-    case_create_btn_id = "dosya-ekle-btn"
+    case_create_btn_xpath = "//a[@class='btn btn-fill btn-primary']"
     case_type_dropbox_id = "dv_blg_turu"
     case_type_detail_dropbox_id = "dv_blg_turu_detay"
     case_subject_txtbox_id = "dv_blg_konu"
@@ -99,6 +100,8 @@ class Locators:
     table_last_row_xpath = "//a[contains(text(),'Law and Person interaction / Ali Pala -')]"
     case_edit_information_btn_xpath = '//*[@id="dava-bilgileri"]/div/table/tbody/tr[1]/td[6]/a[1]'
     case_information_update_btn_id = "dava-bilgi-guncelle"
+
+
 
     # Alerts
     # Successfully saved alert message

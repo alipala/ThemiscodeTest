@@ -1,7 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-#
-<selenium.webdriver.remote.webelement.WebElement (session="1c1f765d1029d6aa6038fedb4b20dafd", element="0.5195176476438954-9")>
------------------------------------------
-Tests finished

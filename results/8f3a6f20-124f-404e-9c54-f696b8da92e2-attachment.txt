@@ -1,6 +1,0 @@
-Initiating Chrome driver
------------------------------------------
-Test started
-Title is wrong 'str' object has no attribute 'text'
------------------------------------------
-Tests finished
