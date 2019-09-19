@@ -6,6 +6,7 @@ from Pages.HomePage import HomePage
 from Base.base import Base
 import pandas as pd
 import allure
+import pytest
 
 
 @allure.feature('Anasayfa hoşgeldin linki')
