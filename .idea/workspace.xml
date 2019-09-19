@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9944160-2d06-4caa-a654-85002a4e340c" name="Default" comment="" />
+    <list default="true" id="b9944160-2d06-4caa-a654-85002a4e340c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/TestSuite/test_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestSuite/test_suite.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +14,20 @@
   <component name="ExportTestResults" exportFormat="Xml" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_home_welcome.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_home_welcome.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/test_home_welcome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+            <state relative-caret-position="88">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_suite.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestSuite/test_suite.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="58" lean-forward="true" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -114,13 +125,13 @@
         <option value="$PROJECT_DIR$/Pages/HomePage.py" />
         <option value="$PROJECT_DIR$/Tests/test_login.py" />
         <option value="$PROJECT_DIR$/Tests/test_home.py" />
-        <option value="$PROJECT_DIR$/TestSuite/test_suite.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Tests/test_lawsuit.py" />
         <option value="$PROJECT_DIR$/Pages/CaseDetailsPage.py" />
         <option value="$PROJECT_DIR$/Pages/LawsuitPage.py" />
         <option value="$PROJECT_DIR$/Base/base.py" />
         <option value="$PROJECT_DIR$/Tests/test_home_welcome.py" />
+        <option value="$PROJECT_DIR$/TestSuite/test_suite.py" />
       </list>
     </option>
   </component>
@@ -150,6 +161,11 @@
               <item name="themis" type="462c0819:PsiDirectoryNode" />
               <item name="Base" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="themis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="themis" type="462c0819:PsiDirectoryNode" />
+              <item name="TestSuite" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -162,15 +178,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\_D\python-misc\themiscode\ThemiscodeTest\Tests" />
-      <recent name="C:\_D\python-misc\themiscode\ThemiscodeTest\Resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\_python\themis\TestSuite" />
       <recent name="C:\_D\python-misc\themiscode\ThemiscodeTest\TestSuite" />
       <recent name="C:\_D\python-misc\themiscode\ThemiscodeTest\Resources" />
       <recent name="C:\_D\python-misc\themiscode\ThemiscodeTest\Tests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\_python\themis" />
+      <recent name="C:\_D\python-misc\themiscode\ThemiscodeTest\Tests" />
+      <recent name="C:\_D\python-misc\themiscode\ThemiscodeTest\Resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -334,6 +351,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22265625" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -612,13 +630,6 @@
     <entry file="file://$PROJECT_DIR$/Resources/Tests.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestSuite/test_suite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/pytest/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -659,8 +670,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/test_home_welcome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        <state relative-caret-position="88">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestSuite/test_suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="58" lean-forward="true" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
         </state>
       </provider>
     </entry>

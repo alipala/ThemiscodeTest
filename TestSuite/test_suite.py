@@ -12,12 +12,11 @@ import unittest
 loader = unittest.TestLoader()
 suite = unittest.TestSuite()
 
-suite.addTest(loader.loadTestsFromModule(TestCaseDetails))
-suite.addTest(loader.loadTestsFromModule(TestLawsuit))
-suite.addTest(loader.loadTestsFromModule(TestHomeWelcome))
-suite.addTests(loader.loadTestsFromModule(TestHome))
 suite.addTests(loader.loadTestsFromModule(TestLogin))
-
+suite.addTests(loader.loadTestsFromModule(TestHome))
+suite.addTest(loader.loadTestsFromModule(TestHomeWelcome))
+suite.addTest(loader.loadTestsFromModule(TestLawsuit))
+suite.addTest(loader.loadTestsFromModule(TestCaseDetails))
 
 runner = unittest.TextTestRunner(verbosity=3)
 result = runner.run(suite)
