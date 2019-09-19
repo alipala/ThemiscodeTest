@@ -15,7 +15,6 @@ class TestLogin(Base):
     __user_data_file = r"\login_details.xlsx"
     df = pd.read_excel(os.getcwd() + __user_data_file)
 
-
     @allure.story('Successful login')
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.testcase('TESTCASE-1')
