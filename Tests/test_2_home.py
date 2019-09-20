@@ -25,7 +25,7 @@ class TestHome(Base):
         try:
             # Allure screenshot for the test
             allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
-            assert "Ana Sayfa - Dava & İcra Takip" in driver.title
+            assert "Giriş - Dava & İcra Takip" in driver.title
             print("Title is ok")
         except Exception as e:
             print("Title is wrong", format(e))
