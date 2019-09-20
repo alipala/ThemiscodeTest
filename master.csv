@@ -11,27 +11,27 @@ CR02: COURT_NAME should be dropdown list rather than text box filled by user.
 CR03: CASE_VALUE area should force the user to write right syntax. Eg. 100000 TL or 100.000
 CR04: System should not allow the user add a case if required fields are empty
 CR05: CLIENT_CITIZEN_NO should allow only numeric and warn the user if type any letter
-CR06: ""FÃ¶y No"" should be unique? If so, when the user try to create a case with a ""fÃ¶y no"" that used before, the system should warn the user
-CR07: In the ""Masraflar"" tab, the entries very inconsistent. That is for example, ""AlÄ±nan Ã¶deme"" field allows to user whatever he want. 100000 TL, 100.000 TL, 100,000 TL. There might be a hint in the fields.
-CR08: ""Ä°bralar/Talimatlar"" delete function does not work
+CR06: ""Föy No"" should be unique? If so, when the user try to create a case with a ""föy no"" that used before, the system should warn the user
+CR07: In the ""Masraflar"" tab, the entries very inconsistent. That is for example, ""Alınan Ödeme"" field allows to user whatever he want. 100000 TL, 100.000 TL, 100,000 TL. There might be a hint in the fields.
+CR08: ""İbralar/Talimatlar"" delete function does not work
 CR09: ""Ä°bralar/Talimatlar"" when adding an image, the system goes to error page.",,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/16/2019 6:07
 C12,Discard Case without Saving,Ali Pala,9/2/2019 20:08,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/4/2019 13:12
 C6,Edit Case,Ali Pala,9/2/2019 19:59,,"CR01: Edit ""case information"" without second edit button clicking. That is, the system should fill the required areas after first clicking edit button.
-CR02: There is no option to fill the previous information before the editing ""mÃ¼vekkil"" nor ""karÅŸÄ± taraf"" information.
-CR03: ""GÃ¼ncelle"" button does not work. The user is able to update the information by clicking ""Kaydet"" button even if ""GÃ¼ncelle"" button is clicked.
+CR02: There is no option to fill the previous information before the editing ""müvekkil"" nor ""karşı taraf"" information.
+CR03: ""Güncelle"" button does not work. The user is able to update the information by clicking ""Kaydet"" button even if ""Güncelle"" button is clicked.
 CR04: ""Masraflar"" tab: There is no any mechanism to delete entries of ""Masraflar"" or ""Alacaklar"". There is only adding mechanism exist. 
 CR05: If the user add a document like "".pdf"" the thumbnail and link is broken
-CR06: ""Ibra/Talimat YÃ¼kle"" button does not work.
-CR07: ""Ibra/Talimat YÃ¼kle"" delete button does not work.
-CR08: ""+"" button does not work under ""Kararlar/Ara kararlar"" -> ""Tenzip ZaptÄ±"", ""DuruÅŸma GÃ¼nÃ¼"", ""Kararlar""",,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/17/2019 13:45
+CR06: ""Ibra/Talimat Yükle"" button does not work.
+CR07: ""Ibra/Talimat Yükle"" delete button does not work.
+CR08: ""+"" button does not work under ""Kararlar/Ara kararlar"" -> ""Tenzip Zaptı"", ""Duruşma Günü, ""Kararlar""",,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/17/2019 13:45
 C7,Delete Case,Ali Pala,9/2/2019 19:59,,CR01: The system should warn the user before deleting the entry,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/5/2019 12:02
-C8,Filter Case,Ali Pala,9/2/2019 20:00,,"CR01: The user should see the columns which are related to filter condition. For example: If user search by ""fÃ¶y no"", he can see the ""fÃ¶y no"" column in search result.
+C8,Filter Case,Ali Pala,9/2/2019 20:00,,"CR01: The user should see the columns which are related to filter condition. For example: If user search by ""föy no"", he can see the ""föy no"" column in search result.
 CR02: The ""Filtreyi Temizle"" button should clear the search word after the user do a filtering. Currently, ""Filtreyi Temizle"" button does not work after making a search.
 CR03: After searching a case and deleting a case for example, the page refresh and the user has to be forced to make a search again. It should not be updated the neither table nor page.
 CR04: After filtering a case, the user wants to click the case to see the details and the user may wants to return back. Currently It does not work. Message is ""Confirm Form Resubmission""
-CR05: If any result cannot be found after search, the system prompt the user as ""HiÃ§ kayÄ±t bulumanadÄ±""
+CR05: If any result cannot be found after search, the system prompt the user as ""HiÃ§ kayÄ±t bulumanadı""
 CR06: If the user try to make a search like ""pala"" or ""ala"", the system shows the result by typing with intellisense without submit form
-CR07: When the user try to select a value from dropbox in order to see the ""Dava DosyalarÄ±"", ""Sayfada/kayÄ±t gÃ¶ster"" dropbox does not work properly.",,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/17/2019 6:11
+CR07: When the user try to select a value from dropbox in order to see the ""Dava Dosyaları"", ""Sayfada/kayıt göster"" dropbox does not work properly.",,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/17/2019 6:11
 C9,Add Levy,Ali Pala,9/2/2019 20:05,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:05
 C10,Export Levy,Ali Pala,9/2/2019 20:08,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:08
 C11,Discard Levy without Saving,Ali Pala,9/2/2019 20:08,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:09
@@ -40,9 +40,9 @@ C14,Add Remainder,Ali Pala,9/2/2019 20:13,,,,,Medium,,Test Cases,0,,,,Master,S1,
 C15,Filter Expense Record,Ali Pala,9/2/2019 20:14,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:14
 C16,Pagination Expense Records,Ali Pala,9/2/2019 20:14,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:14
 C17,Filter Calendar - Genel,Ali Pala,9/2/2019 20:22,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:22
-C18,Filter Calendar - DuruÅŸma GÃ¼nÃ¼,Ali Pala,9/2/2019 20:22,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:22
-C19,Filter Calendar - YapÄ±lacak Ä°ÅŸler,Ali Pala,9/2/2019 20:23,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:23
-C20,Filter Calendar - Ä°zinler,Ali Pala,9/2/2019 20:23,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:23
+C18,Filter Calendar - Duruşma Günü,Ali Pala,9/2/2019 20:22,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:22
+C19,Filter Calendar - Yapılacak İşler,Ali Pala,9/2/2019 20:23,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:23
+C20,Filter Calendar - İzinler,Ali Pala,9/2/2019 20:23,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:23
 C21,Add New Calendar Event,Ali Pala,9/2/2019 20:23,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:23
 C22,Discard New Calendat Event,Ali Pala,9/2/2019 20:23,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:23
 C23,Filter Calendar by User,Ali Pala,9/2/2019 20:24,,,,,Medium,,Test Cases,0,,,,Master,S1,Test Case (Text),Other,Ali Pala,9/2/2019 20:24
