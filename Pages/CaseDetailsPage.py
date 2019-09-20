@@ -1,6 +1,7 @@
 from Locators.locators_case_details import LocatorsCaseDetails
 from Locators.locators import Locators
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 import allure
 
@@ -126,7 +127,12 @@ class CaseDetails:
         select.select_by_value('TL')
         self.driver.find_element_by_id(self.received_payment_detail_txtbox_id).clear()
         self.driver.find_element_by_id(self.received_payment_detail_txtbox_id).send_keys(self.RECEIVED_PAYMENT_DETAIL)
-        self.driver.find_element_by_id(self.received_payment_date_datetime_id).click()
+        # Another Solution 1
+        # datefield = self.driver.find_element_by_id(self.received_payment_date_datetime_id)
+        # ActionChains(self.driver).move_to_element(datefield).click()\
+        #     .send_keys(self.MONTH + self.DAY + self.YEAR).perform()
+        # Another Solution 2
+        self.driver.find_element_by_id(self.received_payment_date_datetime_id).clear()
         self.driver.find_element_by_id(self.received_payment_date_datetime_id)\
             .send_keys(self.MONTH + self.DAY + self.YEAR)
         self.driver.find_element_by_xpath(self.received_payment_add_btn_xpath).click()
@@ -143,6 +149,9 @@ class CaseDetails:
                     payment_detail.append(i.text)
         # Allure screenshot for the test
         allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
+
+        for i in range(3):
+            print(payment_detail[i])
         assert payment_detail[0] == self.RECEIVED_PAYMENT_DETAIL + ":"
         assert payment_detail[1] == self.YEAR + "-" + self.MONTH + "-" + self.DAY
         assert payment_detail[2] == self.RECEIVED_PAYMENT + ".00 TL"
@@ -155,6 +164,7 @@ class CaseDetails:
         select.select_by_value('TL')
         self.driver.find_element_by_id(self.expense_detail_txtbox_id).clear()
         self.driver.find_element_by_id(self.expense_detail_txtbox_id).send_keys(self.EXPENSE_PAYMENT_DETAIL)
+        self.driver.find_element_by_id(self.expense_date_datetime_id).clear()
         self.driver.find_element_by_id(self.expense_date_datetime_id).send_keys(self.MONTH + self.DAY + self.YEAR)
         self.driver.find_element_by_xpath(self.expense_add_btn_xpath).click()
 
@@ -168,9 +178,6 @@ class CaseDetails:
                 item = items.find_elements_by_xpath('//*[@id="mtxk"]/div[last()]/div')
                 for i in item:
                     expense_detail.append(i.text)
-        print(expense_detail[0])
-        print(expense_detail[1])
-        print(expense_detail[2])
         # Allure screenshot for the test
         allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert expense_detail[0] == self.EXPENSE_PAYMENT_DETAIL + ":"
@@ -283,7 +290,7 @@ class CaseDetails:
     def delete_added_request(self):
         driver = self.driver
         # Locate delete button of the second row element.
-        delete_btn = self.driver.find_element_by_xpath("//table/tbody/tr[2]/td[4]/a[2]")
+        delete_btn = self.driver.find_element_by_xpath("//table/tbody/tr/td[4]/a[2]")
         delete_btn.click()
         h1 = self.driver.find_element_by_xpath(self.directive_delete_error_page_h1_xpath)
         # Allure screenshot for the test
@@ -460,11 +467,7 @@ class CaseDetails:
     def workaround_table_list_entries(self):
         select = Select(self.driver.find_element_by_name(Locators.data_records_dropbox_name))
         select.select_by_value('25')
-        time.sleep(2)
-        select.select_by_value('10')
-        time.sleep(2)
-        select.select_by_value('25')
-        time.sleep(2)
+        time.sleep(15)
 
 
 
