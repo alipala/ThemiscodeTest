@@ -110,6 +110,10 @@ class LawsuitPage:
 
         self.data_records_dropbox_name = Locators.data_records_dropbox_name
 
+        # Delete created case by robot
+        self.filtered_table_first_row_delete_btn_xpath = Locators.filtered_table_first_row_delete_btn_xpath
+        self.table_no_records_message_class = Locators.table_no_records_message_class
+
     def case_list_records(self):
         driver = self.driver
         case_details = CaseDetails(driver)
@@ -315,6 +319,21 @@ class LawsuitPage:
         # Allure screenshot for the test
         allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=allure.attachment_type.PNG)
         assert sheet_no.text == '9000'
+
+    def delete_created_case_by_robot(self):
+        # Press delete button
+        self.driver.find_element_by_xpath(self.filtered_table_first_row_delete_btn_xpath).click()
+
+        # Filter file no 9000 which created by test
+        self.driver.find_element_by_name(self.filter_file_no_txtbox_name).clear()
+        self.driver.find_element_by_name(self.filter_file_no_txtbox_name).send_keys(self.SHEET_NO)
+        self.driver.find_element_by_name(self.filter_search_btn_name).click()
+
+        # Wait for the response
+        time.sleep(2)
+
+        empty_table = self.driver.find_element_by_class_name(self.table_no_records_message_class)
+        assert empty_table.text == "Tabloda herhangi bir veri mevcut değil"
 
     def clear_filtered_search(self):
         driver = self.driver

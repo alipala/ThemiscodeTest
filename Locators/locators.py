@@ -29,6 +29,8 @@ class Locators:
     back_error_message_css = "#main-message > h1"
     filtered_table_first_row_third_col_xpath = '//*[@id="DataTables_Table_0"]/tbody/tr[1]/td[3]'
     filtered_table_first_row_4_col_xpath = '//*[@id="DataTables_Table_0"]/tbody/tr[1]/td[4]'
+    filtered_table_first_row_delete_btn_xpath = '//*[@id="DataTables_Table_0"]/tbody/tr/td[7]/a[3]'
+    table_no_records_message_class = "dataTables_empty"
 
 
 
@@ -100,8 +102,6 @@ class Locators:
     table_last_row_xpath = "//a[contains(text(),'Law and Person interaction / Ali Pala -')]"
     case_edit_information_btn_xpath = '//*[@id="dava-bilgileri"]/div/table/tbody/tr[1]/td[6]/a[1]'
     case_information_update_btn_id = "dava-bilgi-guncelle"
-
-
 
     # Alerts
     # Successfully saved alert message
