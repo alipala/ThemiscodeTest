@@ -17,7 +17,7 @@ class TestLogin(Base):
 
     @allure.story('Successful login')
     @allure.severity(allure.severity_level.CRITICAL)
-    @allure.testcase('TESTCASE-1')
+    @allure.testcase(name="Testcase:1", url="https://www.google.com")
     def test_login_success(self):
         driver = self.driver
         login = LoginPage(driver)
@@ -35,7 +35,7 @@ class TestLogin(Base):
 
     @allure.story('Failed login')
     @allure.severity(allure.severity_level.CRITICAL)
-    @allure.testcase('TESTCASE-2')
+    @allure.testcase(name="Testcase:2", url="https://www.google.com")
     def test_login_fail(self):
         driver = self.driver
         login = LoginPage(driver)
